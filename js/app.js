@@ -13,4 +13,42 @@ A random number will be generated every 5 seconds.*/
 // 1) Add some additional styling to your application.
 // 2) Create on and off buttons that will start and stop your application.
 
+var daNumber = [];
+
+// for (var i=0; i<daNumber.length; i++){
+// var newRow = document.createElement('div');
+// new.innerHTML = daNumber[i];
+// numDisplay.appendchild(newRow);
+
+setInterval(function(){   
+    daNumber = (Math.floor((Math.random()*37)+1)); 
+    var newDiv = document.createElement('div');
+    newDiv.innerHTML = daNumber;
+    numDisp.appendChild(newDiv);
+ }, 1000);
+
+ 
+// var daNumber = [];
+// var daSpin = 1000;
+
+// function spin() {
+//     console.log('test');
+// for (let i = 0; i < daSpin.length; i++) {
+//     daNumber = Math.floor(Math.random()*37);
+//     document.getElementById('numDisp').innerHTML = daNumber;
+// }
+
+// console.log(spin);
+//     // console.log(daNumber);
+// for (var i = 0; i<daNumber.length; i++){
+
+// function randomNum() {
+//     console.log('test');
+//     document.getElementById('display').innerHTML = randomNum;
+
+// }
+
+
+
+// randomNum();
 
