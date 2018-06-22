@@ -27,7 +27,7 @@ function getNumber(){
 }
 
 function daInterval(){   
-    var daNumber = (Math.floor((Math.random()*37)+1));
+    var daNumber = (Math.floor((Math.random()*37)));
     console.log(daNumber);
     if (daNumber === 0){
         var numZero = document.createElement('div');
