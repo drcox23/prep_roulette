@@ -1,1 +1,15 @@
+#even{
+    background-color: red;
+    color: white;
+}
 
+#odd{
+    background-color: black;
+    color: white;
+
+}
+
+#zero{
+    background-color: green;
+    color: white;
+}
