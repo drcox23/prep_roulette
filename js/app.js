@@ -13,42 +13,49 @@ A random number will be generated every 5 seconds.*/
 // 1) Add some additional styling to your application.
 // 2) Create on and off buttons that will start and stop your application.
 
-function BackgroundEven(){
-    document.body.style.backgroundColor = 'black';
-    document.body.style.color = 'white'
+
+var spin = document.getElementById("spinner");
+spin.addEventListener('click', getNumber);
+
+var spinStop = document.getElementById("stopSpin");
+spinStop.addEventListener('click', stopMe);
+
+var theInterval;
+
+function getNumber(){
+    theInterval = setInterval(daInterval, 1000);
 }
 
-function BackgroundOdd(){
-   document.body.style.backgroundColor = 'red';
-   document.body.style.color = 'white'
+function daInterval(){   
+    var daNumber = (Math.floor((Math.random()*37)+1));
+    console.log(daNumber);
+    if (daNumber === 0){
+        var numZero = document.createElement('div');
+        numZero.id = "zeroColor";
+        numZero.innerHTML = daNumber;
+        numZero.style.backgroundColor = 'Green';
+        numZero.style.color = 'white'
+        numDisp.appendChild(numZero);
+    
+    }else if (daNumber % 2 === 0){
+        var numEven = document.createElement('div');
+        numEven.id = "evenColor";
+        numEven.innerHTML = daNumber;
+        numEven.style.backgroundColor = 'black';
+        numEven.style.color = 'white';
+        numDisp.appendChild(numEven);
+    }else{
+        var numOdd = document.createElement('div');
+        numOdd.id = "oddColor";
+        numOdd.innerHTML = daNumber;
+        numOdd.style.backgroundColor = 'red';
+        numOdd.style.color = 'white'
+        numDisp.appendChild(numOdd);
+    }
 }
 
-function BackgroundZero(){
-   document.body.style.backgroundColor = 'Green';
-   document.body.style.color = 'white'
-}
+function stopMe(){
+    clearInterval(theInterval);
 
-var daNumber = [];
-
-setInterval(function(){   
-    daNumber = (Math.floor((Math.random()*37)+1)); 
-    var newDiv = document.createElement('div');
-    newDiv.id = 'daColor';
-    newDiv.innerHTML = daNumber;
-    numDisp.appendChild(newDiv);
-    if(daNumber === 0){
-    BackgroundZero();
-} else if (daNumber % 2 === 0) {
-    BackgroundEven();
-} else {
-    BackgroundOdd();
-}
- }, 1000);
-
-  
-     
-
-
- 
-
+} ; 
 
